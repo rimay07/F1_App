@@ -69,7 +69,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Directory Layout of Main Files
     
-    package.json            				--> for npm
+	package.json            				--> for npm
 	src/                 					--> client side files
 		app/						
 			app.component.css				--> css files

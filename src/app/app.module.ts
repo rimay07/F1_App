@@ -7,6 +7,7 @@ import { RaceYearService }  from './race-year/race-year.service';
 import { RaceYearComponent }  from './race-year/race-year.component';
 import { AppComponent } from './app.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     AppRoutingModule,
 	NgbModule.forRoot(),
 	HttpClientModule,
-	NgxPaginationModule
+	NgxPaginationModule,
+	AngularFontAwesomeModule
   ],
   providers: [RaceYearService],
   bootstrap: [AppComponent]

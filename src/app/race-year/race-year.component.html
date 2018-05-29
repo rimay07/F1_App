@@ -8,7 +8,7 @@
 			</th>
 		  </tr>
 		  <tr *ngFor="let result of raceResult | paginate: { itemsPerPage: 10, currentPage: p }" [ngClass]='{worldChampion: result.Results[0].Driver.driverId==champion}'>
-			<td>{{raceYear}}</td>
+			<td>{{raceYear}} <fa name="trophy" *ngIf="result.Results[0].Driver.driverId==champion"></fa></td>
 			<td>{{result.raceName}}</td>
 			<td>{{result.Results[0].number}}</td>
 			<td>{{result.Results[0].Driver.givenName}} {{result.Results[0].Driver.familyName}}</td>

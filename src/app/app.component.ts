@@ -18,7 +18,7 @@ import { Observable } from 'rxjs';
 })
 export class AppComponent {
 	raceYear$: Observable<RaceYear[]>;
-	
+	title = 'F1 App';
 	constructor(
 		private service: RaceYearService,
 		private route: ActivatedRoute

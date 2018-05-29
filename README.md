@@ -69,19 +69,19 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Directory Layout of Main Files
     
-    package.json            			--> for npm
-    src/                 				--> client side files
+    package.json            			    --> for npm
+    src/                 				      --> client side files
       app/						
-		app.component.css				--> css files
-		app.component.spec				--> testing files
-		app.component.html				--> main HTML page
-		app.component					--> main component
-		app.module						--> main module
-		app-routing.module				--> routing module
-        race-year/						--> race folder
-			race-year.component.css		--> css files
-			race-year.component.html	--> race HTML
-			race-year.component.spec	--> race testing files
-			race-year.component			--> race component
-			race-year.service			--> race service file
+		    app.component.css				      --> css files
+		    app.component.spec				    --> testing files
+		    app.component.html				    --> main HTML page
+		    app.component					        --> main component
+		    app.module						        --> main module
+		    app-routing.module				    --> routing module
+        race-year/						        --> race folder
+			    race-year.component.css		  --> css files
+			    race-year.component.html	  --> race HTML
+			    race-year.component.spec	  --> race testing files
+			    race-year.component			    --> race component
+			    race-year.service			      --> race service file
 

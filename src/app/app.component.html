@@ -1,0 +1,26 @@
+<!--Main HTML-->
+<div>
+	<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <img src="https://www.mobiquityinc.com/hs-fs/hubfs/si-images/global/Mobiquity-Logo.png?t=1527173585576&width=219&name=Mobiquity-Logo.png">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/" routerLinkActive="active">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <div ngbDropdown class="d-inline-block">
+				  <button class="btn btn-outline-primary" ngbDropdownToggle>F1 Race Results</button>
+				  <div ngbDropdownMenu class="dropdown-menu-right">
+					<button class="dropdown-item" *ngFor="let raceyear of raceYear$ | async" value={{raceyear.year}} [routerLink]="['/race', raceyear.year]">{{raceyear.year}}</button>
+				  </div>
+			</div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+</div>
+<router-outlet></router-outlet>

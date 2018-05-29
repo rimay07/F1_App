@@ -1,0 +1,26 @@
+<!-- Race Year page to be inserted in the Main HTML-->
+<div align="center">
+	<div style="width:95%">
+		<table class="table" id="md-table">
+		  <tr>
+			<th *ngFor="let header of raceResultHeader">
+			  {{header | uppercase}}
+			</th>
+		  </tr>
+		  <tr *ngFor="let result of raceResult | paginate: { itemsPerPage: 10, currentPage: p }" [ngClass]='{worldChampion: result.Results[0].Driver.driverId==champion}'>
+			<td>{{raceYear}}</td>
+			<td>{{result.raceName}}</td>
+			<td>{{result.Results[0].number}}</td>
+			<td>{{result.Results[0].Driver.givenName}} {{result.Results[0].Driver.familyName}}</td>
+			<td>{{result.Results[0].Constructor.name}}</td>
+			<td>{{result.Results[0].Time.time}}</td>
+		  </tr>
+
+		</table>
+	</div>
+</div>
+<div class="footer" *ngIf="isResultsLoaded">
+	<div class="footer-wrapper">
+		<pagination-controls class="pagination" (pageChange)="p=$event"></pagination-controls>
+	</div>
+</div>

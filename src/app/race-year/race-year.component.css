@@ -1,0 +1,39 @@
+table#md-table {
+    table-layout: fixed;
+}
+
+th, td{
+	text-align:center !important;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+	background-color:#343a40!important;
+}
+
+.footer-wrapper {
+	position:relative !important;
+	width: 300px;
+	margin-right:auto; 
+	margin-left:auto;
+}
+
+
+.pagination /deep/ .ngx-pagination {
+    margin-left: -40px !important;
+}
+
+.pagination /deep/ .pagination-next a, .pagination /deep/ .pagination-previous a, .pagination /deep/ .ngx-pagination a, .pagination /deep/ .ngx-pagination button{
+	color:#007bff !important
+}
+
+.pagination /deep/.ngx-pagination a:hover, .pagination /deep/ .ngx-pagination button:hover{
+	background: transparent !important;
+}
+
+.worldChampion{
+	background-color:#007bff !important;
+	color:#FFFFFF !important;
+}

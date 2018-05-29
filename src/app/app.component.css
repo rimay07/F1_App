@@ -1,0 +1,11 @@
+a{
+	color:#007bff !important
+}
+
+a:hover{
+	text-decoration:underline !important
+}
+
+html,body{
+	overflow:hidden !important;
+}

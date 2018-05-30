@@ -12,6 +12,7 @@ import { Observable } from 'rxjs';
 import { of } from 'rxjs/observable/of';
 //Import service to process data
 import { RaceYearService }  from './race-year.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   templateUrl: './race-year.component.html',
@@ -29,7 +30,8 @@ export class RaceYearComponent{
 	
 	constructor(
 		private route: ActivatedRoute,
-		private service: RaceYearService
+		private service: RaceYearService,
+		private toastr: ToastrService
 	) {}
 	
 	//Initialize Page	
@@ -40,13 +42,12 @@ export class RaceYearComponent{
 			//Request service to fetch data
 			this.service.getYear(params.id).subscribe(
 				data => { this.parseData(data) },
-				err => console.error(err),
+				err => this.toastr.error('Server Error', 'Oops!'),
 				() => {
 					this.isResultsLoaded = true;
 					this.p = 1;
 					this.raceYear = params.id;
 					this.fetchWorldChampion(this.raceYear);
-					console.log('Finish Loading Results')
 				}
 			)
 		)
@@ -61,8 +62,8 @@ export class RaceYearComponent{
 	fetchWorldChampion(year){
 		this.service.fetchWorldChampion(year).subscribe(
 			data => {this.getChampion(data)},
-			err => console.error(err),
-			() => console.log('Finish Getting World Champion')
+			err => this.toastr.error('Server Error', 'Oops!'),
+			() => this.toastr.success('Finish Loading Results & World Champion', 'Success!');
 		)
 	};
 	

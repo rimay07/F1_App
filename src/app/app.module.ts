@@ -8,6 +8,9 @@ import { RaceYearComponent }  from './race-year/race-year.component';
 import { AppComponent } from './app.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+ 
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -21,7 +24,9 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 	NgbModule.forRoot(),
 	HttpClientModule,
 	NgxPaginationModule,
-	AngularFontAwesomeModule
+	AngularFontAwesomeModule,
+	BrowserAnimationsModule,
+	ToastrModule.forRoot()
   ],
   providers: [RaceYearService],
   bootstrap: [AppComponent]

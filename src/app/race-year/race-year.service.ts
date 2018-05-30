@@ -20,10 +20,14 @@ const raceYears = [];
 let range = 10;
 let startYear = 2005
 let yearVal = startYear + range;
+const apiURL = 'http://ergast.com/api/f1/';
+const racePos = '1';
+const apiFormat = '.json';
 
 //Service can be used by any component in the app
 @Injectable()
 export class RaceYearService {
+	
 	constructor(private http:HttpClient) {}
 	
 	//Set the array of years to be evaluated 
@@ -36,12 +40,12 @@ export class RaceYearService {
 
 	//Call the ergast API to load racing results
 	getYear(val) {
-		return this.http.get('http://ergast.com/api/f1/' + val + '/results/1.json');
+		return this.http.get( apiURL + val + '/results/' + racePos + apiFormat);
 	}
 	
 	//Call the ergast API to load world champion results
 	fetchWorldChampion(year){
-		return this.http.get('http://ergast.com/api/f1/' + year +'/driverStandings/1.json');
+		return this.http.get(apiURL + year + '/driverStandings/' + racePos + apiFormat);
 	}
 	
 	//Define table headers

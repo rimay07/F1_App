@@ -9,3 +9,13 @@ a:hover{
 html,body{
 	overflow:hidden !important;
 }
+
+.navbar-toggler:not(:disabled):not(.disabled) {
+    cursor: pointer;
+    /* position:fixed !important; */
+}
+
+.navWrapper{
+	position:fixed;
+	width:100%;
+}

@@ -46,3 +46,19 @@ th, td{
 	color:#fff400;
 	font-size: 17px;
 }
+
+.tableWrapper{
+	padding-top:4%;
+}
+
+@media only screen and (max-width: 850px) and (min-width: 500px) {
+	.tableWrapper{
+		padding-top:8%;
+	}
+}
+
+@media only screen and (max-width: 499px) and (min-width: 000px) {
+	.tableWrapper{
+		padding-top:15%;
+	}
+}

@@ -27,6 +27,7 @@ export class RaceYearComponent{
 	p:number;
 	raceYear:any;
 	champion:any;
+	mobile:boolean;
 	
 	constructor(
 		private route: ActivatedRoute,
@@ -44,6 +45,7 @@ export class RaceYearComponent{
 				data => { this.parseData(data) },
 				err => this.toastr.error('Server Error', 'Oops!'),
 				() => {
+					this.checkMobile();
 					this.isResultsLoaded = true;
 					this.p = 1;
 					this.raceYear = params.id;
@@ -63,12 +65,18 @@ export class RaceYearComponent{
 		this.service.fetchWorldChampion(year).subscribe(
 			data => {this.getChampion(data)},
 			err => this.toastr.error('Server Error', 'Oops!'),
-			() => this.toastr.success('Finish Loading Results & World Champion', 'Success!')
+			() => {
+				if (!this.mobile)this.toastr.success('Finish Loading Results & World Champion', 'Success!');
+			}
 		)
 	};
 	
 	//Assign the champion to a data bound variable to be used by the HTML
 	getChampion(data) {
 		this.champion = data.MRData.StandingsTable.StandingsLists[0].DriverStandings[0].Driver.driverId;
+	}
+	
+	checkMobile(){
+		this.mobile = (window.screen.width < 800) ? true : false;
 	}
 }

@@ -15,9 +15,12 @@ th, td{
 
 .footer-wrapper {
 	position:relative !important;
-	width: 300px;
-	margin-right:auto; 
-	margin-left:auto;
+	width: 100%;
+	text-align: center;
+}
+
+.paging {
+	display: inline-block;
 }
 
 

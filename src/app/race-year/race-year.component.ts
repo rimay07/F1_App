@@ -63,7 +63,7 @@ export class RaceYearComponent{
 		this.service.fetchWorldChampion(year).subscribe(
 			data => {this.getChampion(data)},
 			err => this.toastr.error('Server Error', 'Oops!'),
-			() => this.toastr.success('Finish Loading Results & World Champion', 'Success!');
+			() => this.toastr.success('Finish Loading Results & World Champion', 'Success!')
 		)
 	};
 	
